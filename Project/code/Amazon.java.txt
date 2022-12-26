@@ -1,0 +1,31 @@
+package project;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;  
+import org.openqa.selenium.chrome.ChromeDriver; 
+
+public class Amazon {
+  
+    public static void main(String[] args) {  
+        
+    // declaration and instantiation of objects/variables  
+        System.setProperty("webdriver.chrome.driver","C:\\Users\\abc\\Downloads\\chromedriver_win32_Support108\\chromedriver.exe");  
+    WebDriver driver=new ChromeDriver(); 
+   //   driver.get("www.amazon.in");
+      
+// Launch website  
+    driver.navigate().to("https://www.amazon.in/");  
+          
+    // Click on the search text box and send value 
+    driver.findElement(By.id("twotabsearchtextbox")).sendKeys("smart watch"); 
+    driver.findElement(By.id("a-size-mini a-spacing-none a-color-base s-line-clamp-2")).click();  
+          
+    // Click on first product  
+   driver.findElement(By.className("brand-follow-tooltip-root")).click();  
+   // click on find watches for women(Filter)
+   driver.findElement(By.className("a-size-base a-color-base")).click();
+
+      
+    } 
+  
+}
